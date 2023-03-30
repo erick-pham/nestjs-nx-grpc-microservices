@@ -1,0 +1,64 @@
+{
+  "name": "nestjs-nx-grpc-microservices",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/nestjs-nx-grpc-microservices/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/webpack:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "target": "node",
+        "compiler": "tsc",
+        "outputPath": "dist/apps/nestjs-nx-grpc-microservices",
+        "main": "apps/nestjs-nx-grpc-microservices/src/main.ts",
+        "tsConfig": "apps/nestjs-nx-grpc-microservices/tsconfig.app.json",
+        "assets": ["apps/nestjs-nx-grpc-microservices/src/assets"],
+        "isolatedConfig": true,
+        "webpackConfig": "apps/nestjs-nx-grpc-microservices/webpack.config.js"
+      },
+      "configurations": {
+        "development": {},
+        "production": {}
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/js:node",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "nestjs-nx-grpc-microservices:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "nestjs-nx-grpc-microservices:build:development"
+        },
+        "production": {
+          "buildTarget": "nestjs-nx-grpc-microservices:build:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/nestjs-nx-grpc-microservices/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "apps/nestjs-nx-grpc-microservices/jest.config.ts",
+        "passWithNoTests": true
+      },
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "codeCoverage": true
+        }
+      }
+    }
+  },
+  "tags": []
+}
