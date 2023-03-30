@@ -56,5 +56,6 @@
       "!{projectRoot}/.eslintrc.json"
     ],
     "sharedGlobals": []
-  }
+  },
+  "defaultProject": "gateway-svc"
 }
