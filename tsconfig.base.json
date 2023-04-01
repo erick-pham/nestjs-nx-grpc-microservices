@@ -15,8 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@nestjs-nx-grpc-microservices/proto": ["libs/proto/src/index.ts"],
-      "@nestjs-nx-grpc-microservices/shared": ["libs/shared/src/index.ts"]
+      "@my-workspace/grpc/interface/auth": ["libs/grpc/interface/auth.pb.ts"],
+      "@my-workspace/grpc/proto": ["libs/grpc/proto/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

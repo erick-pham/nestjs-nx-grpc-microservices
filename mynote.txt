@@ -1,0 +1,23 @@
+To create the a microservice app, run the following command:
+nx g @nrwl/nest:app gateway-svc
+nx g @nrwl/nest:app auth-svc
+nx g @nrwl/nest:app product-svc
+nx g @nrwl/nest:app order-svc
+
+To start a service
+nx serve gateway-svc
+nx serve auth-svc
+nx serve product-svc
+nx serve order-svc
+
+cd gateway app
+create modules
+$ nest g mo auth && nest g co auth --no-spec && nest g s auth --no-spec
+$ nest g mo product && nest g co product --no-spec
+$ nest g mo order && nest g co order --no-spec
+
+Create a shared library by running the following command:
+nx g @nrwl/node:lib shared
+
+Test Gateway-REST: http://localhost:3333/api-docs. Gateway connects AuthSVC via gRPC
+Test Auth-REST: http://localhost:3010/api-docs
