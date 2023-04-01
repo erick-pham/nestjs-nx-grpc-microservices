@@ -21,3 +21,7 @@ nx g @nrwl/node:lib shared
 
 Test Gateway-REST: http://localhost:3333/api-docs. Gateway connects AuthSVC via gRPC
 Test Auth-REST: http://localhost:3010/api-docs
+
+
+To build your Nx Nest app in production mode, run the following command:
+nx build gateway-svc --prod

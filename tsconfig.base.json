@@ -16,6 +16,7 @@
     "baseUrl": ".",
     "paths": {
       "@my-workspace/grpc/interface/auth": ["libs/grpc/interface/auth.pb.ts"],
+      "@my-workspace/tcp/interface/product": ["libs/tcp/interface/product.interface.ts"],
       "@my-workspace/grpc/proto": ["libs/grpc/proto/index.ts"]
     }
   },
